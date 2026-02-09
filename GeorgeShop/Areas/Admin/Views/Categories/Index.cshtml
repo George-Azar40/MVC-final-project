@@ -35,6 +35,8 @@
                         <a class="btn btn-danger" asp-controller="categories" asp-action="remove" asp-route-id=@category.Id>
                             Delete
                         </a>
+
+                        <a class="btn btn-info" asp-controller="Categories" asp-action="edit" asp-route-id="@category.Id" >Edit</a>
                     </td>
             </tr>
             }

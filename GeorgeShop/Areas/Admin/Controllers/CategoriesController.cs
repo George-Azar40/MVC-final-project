@@ -36,5 +36,22 @@ namespace GeorgeShop.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Edit(int id)
+        {
+            var category = context.Categories.Find(id);
+            return View(category);
+        }
+        public IActionResult Update(Category request , int id) 
+        {
+            if (ModelState.IsValid)
+            {
+                context.Categories.Update(request);
+                context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View("Edit" , request);
+        }
+
+
     }
 }
