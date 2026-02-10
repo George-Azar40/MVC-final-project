@@ -1,4 +1,5 @@
-﻿using Microsoft.Build.Framework;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Build.Framework;
 using System.ComponentModel.DataAnnotations;
 
 namespace GeorgeShop.Models
@@ -18,6 +19,7 @@ namespace GeorgeShop.Models
         public string? Image {  get; set; }
         [Display(Name="Categories")]
         public int CategoryId { get; set; }
+        [ValidateNever]
         public Category Category { get; set; }
         
     }

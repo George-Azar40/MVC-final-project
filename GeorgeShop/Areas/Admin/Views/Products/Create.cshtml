@@ -15,7 +15,7 @@
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Product Descritption</label>
         <textarea asp-for=Description class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
-        <span class="text-danger" asp-validation-for="Price"></span>
+        <span class="text-danger" asp-validation-for="Description"></span>
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Product Rate</label>
@@ -29,10 +29,10 @@
     </div>
     <div class="mb-3">
         <label asp-for="CategoryId" class="form-label"></label>
-        <select class="form-select">
+        <select class="form-select" asp-for="CategoryId">
             @foreach (var item in ViewBag.Categories)
             {
-                <option>@item.Name</option>
+                <option value="@item.Id">@item.Name</option>
             }
         </select>
         <span class="text-danger" asp-validation-for="CategoryId"></span>
